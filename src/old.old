@@ -1,0 +1,15 @@
+const mysql = require("promise-mysql");
+const globalConstant = require("./const/globalConstant");
+
+const connection = mysql.createConnection({
+  host: globalConstant.HOST,
+  database: globalConstant.DATABASE,
+  user: globalConstant.USER,
+  password: globalConstant.PASSWORD,
+});
+
+getConnection = async () => await connection;
+
+module.exports = {
+  getConnection,
+};
